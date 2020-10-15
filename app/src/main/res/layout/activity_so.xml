@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/llbottom">
+
+        <LinearLayout
+            android:id="@+id/llSOToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/activity_bg_color"
+            android:gravity="center_vertical"
+            android:paddingRight="20px"
+            android:paddingLeft="20px">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCustomerName"
+                android:text=""
+                android:textColor="@color/whites"
+                android:textStyle="bold"
+                android:layout_weight="0.7"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDate"
+                android:text=""
+                android:textColor="@color/black"
+                android:layout_weight="0.3"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25px"
+                android:paddingRight="25px"
+                android:paddingTop="10px"
+                android:paddingBottom="10px">
+
+<!--                <EditText-->
+<!--                    android:id="@+id/etItemSearchSOActivity"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/et_roundedbox_bg"-->
+<!--                    android:padding="@dimen/edittextsearch_padding"-->
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/acvItemSearchSOActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_roundedbox_bg"
+                    android:padding="@dimen/edittextsearch_padding"
+                    android:inputType="textFilter"
+                    android:singleLine="true"/>
+
+<!--                    android:singleLine="true"/>-->
+                <!--android:paddingLeft="10px"-->
+                <!--android:layout_height="80px"-->
+
+                <ImageButton
+                    android:id="@+id/imgBtnSearchItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search"
+                    android:layout_alignRight="@+id/acvItemSearchSOActivity"
+                    android:layout_alignBottom="@+id/acvItemSearchSOActivity"
+                    android:background="@null"
+                    android:paddingTop="5px"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10px"
+                android:background="@color/activity_bg_color">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="#"
+                        android:textColor="@color/whites"
+                        android:layout_weight="0.1"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:layout_height="wrap_content"
+                        android:text="Product Name"
+                        android:textColor="@color/whites"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--.2 .3 .4 .1-->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/whites"
+                        android:text="MRP"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/whites"
+                        android:text="QTY"
+                        android:gravity="right"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/whites"
+                        android:gravity="center"
+                        android:text="Total"
+                        android:paddingRight="5px"/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/whites"
+                        android:text="Note"
+                        android:gravity="right"
+                        android:paddingRight="5px"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lvProductlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll1"
+                android:layout_marginBottom="15px"
+                android:transcriptMode="alwaysScroll"
+                android:stackFromBottom="true">
+            </ListView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llbottom"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:id="@+id/llSOBottombar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15px"
+            android:background="@color/activity_bg_color">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_weight="0.7"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="20px">-->
+<!--                &lt;!&ndash;android:background="#00FFFF"&ndash;&gt;-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/llAddRx"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+<!--                    &lt;!&ndash;android:background="#FF0000"&ndash;&gt;-->
+
+<!--                    <ImageButton-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:id="@+id/imgBtnRemarksPrescrptn"-->
+<!--                        android:src="@drawable/ic_remarks_prescrptn"-->
+<!--                        android:background="@null"-->
+<!--                        android:layout_gravity="center_vertical"-->
+<!--                        android:layout_weight="0.2"/>-->
+<!--                    <Button-->
+<!--                        android:id="@+id/btnAddPrescription"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:text="Add Prescription"-->
+<!--                        android:textColor="@color/whites"-->
+<!--                        android:background="@drawable/corners_round_btn"-->
+<!--                        android:drawableLeft="@drawable/ic_addprescriptn_24px_2"-->
+<!--                        android:padding="10px"-->
+<!--                        android:layout_weight="0.6"/>-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="0.2"-->
+<!--                        android:gravity="right"-->
+<!--                        android:id="@+id/rlPrscrptn">-->
+<!--                        &lt;!&ndash;android:background="#FF00FF"&ndash;&gt;-->
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:id="@+id/tvNoOfPrescrptnsAdded"-->
+<!--                            android:text="0"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:layout_toLeftOf="@+id/imgBtnContentCopy"-->
+<!--                            android:layout_centerVertical="true"-->
+<!--                            android:layout_marginRight="5px"/>-->
+<!--                        <ImageButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:id="@+id/imgBtnContentCopy"-->
+<!--                            android:src="@drawable/ic_content_copy_24px"-->
+<!--                            android:background="@null"-->
+<!--                            android:layout_centerVertical="true"/>-->
+<!--                    </RelativeLayout>-->
+<!--                </LinearLayout>-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:layout_marginTop="10px"-->
+<!--                    android:layout_below="@+id/llAddRx"-->
+<!--                    android:paddingLeft="20px"-->
+<!--                    android:paddingRight="20px">-->
+<!--                    &lt;!&ndash;android:background="#00FF00"&ndash;&gt;-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:id="@+id/tvAmount"-->
+<!--                        android:text="Approx.Amount:"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:layout_centerVertical="true"/>-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:id="@+id/tvAmountValue"-->
+<!--                        android:text=""-->
+<!--                        android:background="#4A7BCB"-->
+<!--                        android:textColor="@color/whites"-->
+<!--                        android:layout_toRightOf="@+id/tvAmount"-->
+<!--                        android:padding="15px"-->
+<!--                        android:layout_marginLeft="25px"/>-->
+<!--                    &lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+
+<!--                </RelativeLayout>-->
+<!--            </RelativeLayout>-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20px"
+                android:layout_gravity="bottom"
+                android:gravity="bottom">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgBtnRemarksPrescrptn"
+                    android:src="@drawable/ic_remarks_prescrptn"
+                    android:background="@null"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.2"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SO"
+                        android:textColor="@color/whites"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:id="@+id/tvSODocNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#EF7F1A"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20px">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount : "
+                        android:textColor="@color/whites"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:id="@+id/tvBilltotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/whites"
+                        android:text=""
+                        android:background="#EF7F1A"
+                        android:paddingLeft="10px"
+                        android:paddingRight="10px"/>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:padding="20px">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/btnNew"
+                    android:text="NEW"
+                    android:layout_weight="0.5"
+                    android:paddingLeft="15px"
+                    android:drawablePadding="5px"
+                    android:textColor="@color/whites"
+                    android:background="@drawable/corners_round_btn_black"
+                    android:drawableLeft="@drawable/ic_add_24px"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:id="@+id/btnSave"
+                    android:text="SAVE"
+                    android:background="@drawable/corners_round_btn"
+                    android:drawableLeft="@drawable/ic_save_24px"
+                    android:paddingLeft="15px"
+                    android:layout_marginTop="20px"
+                    android:drawablePadding="5px"
+                    android:textColor="@color/whites"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,93 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llRptAct1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/activity_bg_color">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/llpinfoact02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        android:layout_gravity="left"
+        android:gravity="left"
+        android:padding="2dp">
+
+        <EditText android:id="@+id/etDate"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.7"
+            android:singleLine="true">
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/imageButtonCalender"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/txtReportFilter"
+            android:layout_toRightOf="@+id/txtReportFilter"
+            android:cropToPadding="true"
+            android:src="@drawable/calendar_icon"
+            android:onClick="showDatePickerDialog"
+            android:background="@null"/>
+        <Button
+            android:id="@+id/btnLoadReport"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Load"
+
+            android:layout_marginRight="10dp"
+
+            android:width="100dp"
+            android:layout_gravity="left" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:fastScrollEnabled="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:height="30dp"
+        android:longClickable="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:scrollbarStyle="insideInset"
+        android:background="#0000ff"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="1dp"/>
+
+    <!-- below commented lv is the original on 13/07/2017-->
+    <ListView
+        android:id="@+id/lvList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:fastScrollEnabled="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:height="500dp"
+        android:longClickable="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:scrollbarStyle="insideInset"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <!--marginright before 10dp-->
+
+</LinearLayout>
